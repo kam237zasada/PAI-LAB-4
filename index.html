@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="pl">
+
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title>Zadanie 4</title>
+        <link rel="stylesheet" href="index.css" type="text/css"/> 
+    </head>
+    <body>
+        <header>
+            <div class="menu">
+                <button class="menu-item button" name="liczbylucasa" onclick="showItem(this.name)">Liczby Lucasa</button>
+                <button class="menu-item button" name="liczbypierwsze"onclick="showItem(this.name)">Liczby pierwsze</button>
+                <button class="menu-item button" name="rozklad" onclick="showItem(this.name)">Rozkład na czynniki pierwsze</button>
+                <button class="menu-item button" name="informacje" onclick="showItem(this.name)">Informacja o kliencie</button>
+            </div>
+        </header>
+        <section id="content-section">
+            <div id="content">
+            <div class="content" id="liczbylucasa">
+                <h2>Liczby Lukasa</h2>
+                <p>W poniższe pole należy wpisać liczbę "n" z zakresu od 4 do 44, a następnie kliknąć policz, a przejdziesz na stronę, która policzy sumę ciągu "n" liczb.</p>
+                <form action="lucas.php" method="GET">
+                    <input
+                    class="input"
+                    type="text"
+                    name="n"
+                    />
+                    <input
+                    class="button"
+                    type="submit"
+                    value="Licz!"
+                    />
+                </form>
+            </div>
+            <div class="content" id="liczbypierwsze">
+                <h2>Liczby Pierwsze</h2>
+                <p>W poniższe pole należy wpisać liczbę naturalną "n" z zakresu od 1 do 1 000 000 000, a następnie kliknąć sprawdź, a przejdziesz na stronę, która sprawdzi czy podana liczba jest liczbą pierwszą.</p>
+                <form action="primeNumber.php" method="POST">
+                    <input
+                    class="input"
+                    type="text"
+                    name="n"
+                    />
+                    <input
+                    class="button"
+                    type="submit"
+                    value="Sprawdź!"
+                    />
+                </form>
+            </div>
+            <div class="content" id="rozklad">
+                <h2>Rozkład na czynniki pierwsze</h2>
+                <p>W poniższe pole należy wpisać liczbę naturalną "n" z zakresu od 1 do 1 000 000 000, a następnie kliknąć sprawdź, a przejdziesz na stronę, która rozłoży liczbę na czynniki pierwsze.</p>
+                <form action="factorization.php" method="GET">
+                    <input
+                    class="input"
+                    type="text"
+                    name="n"
+                    />
+                    <input
+                    class="button"
+                    type="submit"
+                    value="Sprawdź!"
+                    />
+                </form>
+            </div>
+            <div class="content" id="informacje">
+                <h2>Cześć! Podaj swoje dane</h2>
+                <form action="informations.php" method="POST">
+                    <div class="field"><label>Imię</label>
+                    <input
+                    class="input"
+                    type="text"
+                    name="name"
+                    required
+                    />
+                </div>
+                <div class="field"><label>Nazwisko</label>
+                    <input 
+                    class="input"
+                    type="text"
+                    name="secondName"
+                    required
+                    />
+                </div>
+                <div class="field"><label>Płeć</label>
+                    <label><input
+                    class="input"
+                    type="radio"
+                    name="gender"
+                    value="Mężczyzna"
+                    checked
+                    />M
+                    <input
+                    class="input"
+                    type="radio"
+                    name="gender"
+                    value="Kobieta"
+                    />K</label>
+                </div>
+                <div class="field">
+                    <label>Data urodzenia</label>
+                    <input
+                    class="input"
+                    type="date"
+                    name="birthDate"
+                    />
+                </div>
+                <div class="field">
+                    <label>E mail</label>
+                    <input
+                    class="input"
+                    type="email"
+                    name="email"
+                    />
+                </div>
+                <div class="field">
+                    <label>Hasło</label>
+                    <input
+                    class="input"
+                    type="password"
+                    name="password"
+                    />
+                </div>
+                <div class="field">
+                    <label>Ulubiony kolor</label>
+                    <input
+                    class="input"
+                    type="color"
+                    name="color"
+                    />
+                </div>
+                <div class="field">
+                    <label>Ulubiona liczba (1-9)</label>
+                    <input
+                    class="input"
+                    type="number"
+                    min="1"
+                    max="9"
+                    name="number"
+                    />
+                </div>
+                <div class="field">
+                    <label>Ulubiona pora roku</label>
+                    <label>
+                        <input
+                        class="input"
+                        type="checkbox"
+                        name="spring"
+                        value=spring
+                        /> Wiosna
+                        <input
+                        class="input"
+                        type="checkbox"
+                        name="summer"
+                        value=summer
+                        /> Lato
+                        <input
+                        class="input"
+                        type="checkbox"
+                        name="autumn"
+                        value=autumn
+                        /> Jesień
+                        <input
+                        class="input"
+                        type="checkbox"
+                        name="winter"
+                        value=winter
+                        /> Zima
+                </label>
+                </div>
+                <div class="field">
+                    <label>Poziom zadowolenia z życia (%)</label>
+                    <label><input
+                    class="input"
+                    type="range"
+                    min="0"
+                    max="100"
+                    step="1"
+                    name="happiness"
+                    value="50"
+                    onchange="setProcent(this.value)"
+                    /> <span id="procent"></span></label>
+                </div>
+                <div class="field">
+                    <label>Dzień kontaktu z klientem</label>
+                    <select  class="input" name="day">
+                        <option value="" selected>Wybierz dzień</option>
+                        <option value="Poniedziałek">Poniedziałek</option>
+                        <option value="Wtorek">Wtorek</option>
+                        <option value="Środa">Środa</option>
+                        <option value="Czwartek">Czwartek</option>
+                        <option value="Piątek">Piątek</option>
+                        <option value="Sobota">Sobota</option>
+                        <option value="Niedziela">Niedziela</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Dodatkowe informacje o kliencie</label>
+                    <textarea 
+                    cols="30"
+                    rows="10"
+                    name="description"
+                    ></textarea>
+                </div>
+                <input
+                class="button"
+                type="submit"
+                value="Wyślij"
+                />
+                </form></div>
+        </div>
+        </section>
+        <footer>
+            <div class="footer">Kamil Zasada 2020</div>
+        </footer>
+        <script src="index.js"></script>
+    </body>
+</html>

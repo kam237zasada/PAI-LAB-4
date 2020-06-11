@@ -1,0 +1,93 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Verdana', 'sans-serif'
+}
+
+.menu {
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+}
+
+#content {
+    width: 100vw;
+    min-height: 90vh;
+    height: 100%;
+    background-color: gray;
+}
+
+.content {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.content > * {
+    padding: 30px;
+}
+
+.content h2 {
+    color: #5566aa;
+}
+
+#liczbylucasa, #liczbypierwsze, #rozklad, #informacje {
+    display: none;
+    z-index: 2;
+}
+
+.input {
+    width: 240px;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px 10px;
+}
+
+.button {
+    background-color: lightgreen;
+    height: 40px;
+    width: 100%;
+    border-radius: 10px 10px;
+}
+
+.button:hover {
+    background-color: green;
+}
+
+table {
+    border: 1px solid gray;
+    border-collapse: collapse;
+    margin: 10px;
+}
+
+th,tr,td {
+    border: 1px solid gray;
+    border-collapse: collapse;
+    padding: 5px;
+}
+th {
+    background-color: lightblue;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: lightgray;
+
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer {
+    text-align: center;
+}
